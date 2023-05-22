@@ -23,9 +23,13 @@ Make sure you have Docker installed on your machine. [Dockerhub](https://hub.doc
 
         docker pull weversonlemos/geocode-finder:latest
 
-2. Start container with image and api key
+2. Create docker network
 
-        docker run -p 8080:8080 --name geocode-finder -e API_KEY=YOUR_API_KEY weversonlemos/geocode-finder:latest
+        docker network create ct-apis
+
+3. Start container with image and api key
+
+        docker run -p 8080:8080 --network ct-apis --name geocode-finder -e API_KEY=YOUR_API_KEY weversonlemos/geocode-finder:latest
 
 3. To obtain the coordinates of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
 
