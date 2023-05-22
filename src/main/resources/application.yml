@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: geocode-finder
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: ${CONTEXT_PATH:/address/}
+
+app:
+  google-url: https://maps.googleapis.com/maps/api/geocode
+  google-api-key: ${API_KEY}
